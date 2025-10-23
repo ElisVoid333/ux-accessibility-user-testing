@@ -25,8 +25,14 @@
 
                 <!-- Enviro models -->
                 <a-asset-item id="skybox-model" src="/worlds/UT-task-1/assets/models/forest_clearing_1_ground_skybox.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
-                <a-asset-item id="navmesh_gltf" src="/worlds/UT-task-1/assets/models/simple-maze-nav_02.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
-                <a-asset-item id="maze-model" src="/worlds/UT-task-1/assets/models/simple-maze_02.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="enviro-model" src="/worlds/UT-task-1/assets/models/simple-room_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="TV-model" src="/worlds/UT-task-1/assets/models/simple-TV.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="navmesh_gltf" src="/worlds/UT-task-1/assets/models/simple-room-nav_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="mug-model" src="/worlds/UT-task-1/assets/models/object-mug_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="book-model" src="/worlds/UT-task-1/assets/models/object-book_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="notebook-model" src="/worlds/UT-task-1/assets/models/object-book_03.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="bear-model" src="/worlds/UT-task-1/assets/models/low_poly_asset_teddy_bear.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="cube-model" src="/worlds/UT-task-1/assets/models/rubiks_cube.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
                 
             </a-assets>
 
@@ -35,11 +41,16 @@
 
             <!-- start your code: put your A-frame, Circles XR, and custom components here -->
             
-            <a-entity id="maze"
-                      gltf-model="#maze-model" visible='true'
-                      position="0 -0.1 -11"
+            <a-entity id="enviro"
+                      gltf-model="#enviro-model"
+                      position="-3.75 0 0"
                       rotation="0 0 0"
-                      scale="0.5 0.3 0.5"></a-entity>
+                      scale="0.2 0.2 0.2"></a-entity>
+            <a-entity id="tv"
+                      gltf-model="#TV-model"
+                      position="-1.4 0.07 -1.4"
+                      rotation="0 -90 0"
+                      scale="1.5 1.5 1.5"></a-entity>
 
             <a-entity id="skybox"
                       gltf-model="#skybox-model"
@@ -49,122 +60,57 @@
 
             <a-entity id="navmesh" 
                       gltf-model="#navmesh_gltf" visible='false' nav-mesh
-                      position="0 -0.1 -11"
+                      position="-3.75 0 0"
                       rotation="0 0 0"
-                      scale="0.5 0.3 0.5"></a-entity>
+                      scale="0.2 0.2 0.2"></a-entity>
 
-            <a-entity id="spawnPoint"
+            <a-entity id="portal-task-2"
+                      circles-portal="title_text:Second Task; link_url:/w/UT-task-2;"
+                      position="2.5 1.25 1.75"
+                      rotation="0 130 0"></a-entity>
+
+            <!-- objects -->
+            <a-entity id="mug_01"
+                      gltf-model="#mug-model"
+                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;"
+                      position="-5.6 0.725 -2.12"
+                      rotation="0 30 0"
+                      scale="0.35 0.35 0.35"></a-entity>
+            <a-entity id="book_01"
+                      gltf-model="#book-model"
+                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
+                      position="-3.05 0.65 -2.05"
+                      rotation="7 12 -1"
+                      scale="0.3 0.3 0.3"></a-entity>
+            <a-entity id="book_02"
+                      gltf-model="#notebook-model"
+                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
+                      position="-2.75 0.78 -2.1"
+                      rotation="0 80 0"
+                      scale="0.25 0.25 0.25"></a-entity>
+            <a-entity id="bear_01"
+                      gltf-model="#bear-model"
+                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.4 0; inspectScale: 1.5 1.5 1.5;"
+                      position="-4 0.625 -2.25"
+                      rotation="0 0 0"
+                      scale="0.8 0.8 0.8"></a-entity>
+            <a-entity id="cube_01"
+                      gltf-model="#cube-model"
+                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.2 0; inspectScale: 0.2 0.2 0.2; inspectRotation: 30 20 0;"
+                      position="-4 0.4 2.2"
+                      rotation="0 30 0"
+                      scale="0.15 0.15 0.15"></a-entity>
+
+            <!-- teleport points -->
+            <a-entity class="checkPoint"
                       circles-checkpoint circles-spawnpoint
-                      position="2 0.05 4" rotation="0 30 0" scale="0.5 0.5 0.5"></a-entity>
-
+                      position="-2 0.2 0.9" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
             <a-entity class="checkPoint"
                       circles-checkpoint
-                      position="0 0.05 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+                      position="-4.5 0.22 -1" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
             <a-entity class="checkPoint"
                       circles-checkpoint
-                      position="0 0.05 -3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-2.15 0.05 -3.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="2.35 0.05 -3.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="8 0.05 -3.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="2.35 0.05 -5.5" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-1.9 0.05 -5.5" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="5.8 0.05 -6.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-1.15 0.05 -7.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-4.4 0.05 -7.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-4.7 0.05 -5.45" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-4.7 0.05 -3.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -3.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -7.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="3.4 0.05 -8.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="3.4 0.05 -9.6" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -10.25" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -12.45" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85.4 0.05 -14.65" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="0 0.05 -12.45" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="0 0.05 -10.25" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="5.75 0.05 -12.35" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="7.95 0.05 -9" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="8 0.05 -12.45" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="8 0.05 -14.7" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="8 0.05 -19.2" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="4.6 0.05 -19.15" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="4.6 0.05 -17" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="4.45 0.05 -14.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-3.25 0.05 -14.85" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-3.7 0.05 -17" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -17.15" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-7.85 0.05 -19.3" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-0.1 0.05 -19.45" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="-0.55 0.05 -17.05" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity class="checkPoint"
-                      circles-checkpoint
-                      position="0 0.05 -23.55" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+                      position="1 0.2 -1" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
 
             <!-- end your code: -->
         </a-scene>
