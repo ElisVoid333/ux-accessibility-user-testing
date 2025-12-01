@@ -64,7 +64,8 @@
                       rotation="0 0 0"
                       scale="0.2 0.2 0.2"></a-entity>
 
-            <a-entity id="portal-task-2"
+            <a-entity id="portal-task-2" circles-interactive-visible="false"
+                      animation="property: circles-interactive-visible; to: true; delay: 10000;"
                       circles-portal="title_text:Second Task; link_url:/w/UT-task-2;"
                       position="2.5 1.25 1.75"
                       rotation="0 130 0"></a-entity>
@@ -72,32 +73,37 @@
             <!-- objects -->
             <a-entity id="mug_01"
                       gltf-model="#mug-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;"
+                      circles-artefact="descriptionLookAt: true; label_offset: 0 0.5 0; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;
+                                        label_text: Mug; title: Mary's Mug; description: This is Mary's favorite mug, she likes to use this mug for her morning tea. The number assigned to this item is 24.;"
                       position="-5.6 0.725 -2.12"
                       rotation="0 30 0"
                       scale="0.35 0.35 0.35"></a-entity>
             <a-entity id="book_01"
                       gltf-model="#book-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
+                      circles-artefact="descriptionLookAt: true; label_offset: 0 0.5 0; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;
+                                        label_text: Book; title: Susan's Diary; description: Property of Susan. DO NOT READ. The number assigned to this item is 48.;"
                       position="-3.05 0.65 -2.05"
                       rotation="7 12 -1"
                       scale="0.3 0.3 0.3"></a-entity>
             <a-entity id="book_02"
                       gltf-model="#notebook-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
+                      circles-artefact="descriptionLookAt: true; label_offset: 0 0.5 0; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;
+                                        label_text: Notebook; title: Notebook; description: This is marks grocery list.;"
                       position="-2.75 0.78 -2.1"
                       rotation="0 80 0"
                       scale="0.25 0.25 0.25"></a-entity>
             <a-entity id="bear_01"
                       gltf-model="#bear-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.4 0; inspectScale: 1.5 1.5 1.5;"
+                      circles-artefact="descriptionLookAt: true; label_offset: 0 0.7 0; inspectPosition: 0 -0.5 0; inspectRotation: 15 20 0;
+                                        label_text: Teddy Bear; title: Teddy Bear; description: Annie really likes here teddy bear, she can't sleep without it.;"
                       position="-4 0.625 -2.25"
                       rotation="0 0 0"
                       scale="0.8 0.8 0.8"></a-entity>
             <a-entity id="cube_01"
                       gltf-model="#cube-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 -0.2 0; inspectScale: 0.2 0.2 0.2; inspectRotation: 30 20 0;"
-                      position="-4 0.4 2.2"
+                      circles-artefact="descriptionLookAt: true; label_offset: 0 0.5 0; inspectPosition: 0 0 0; inspectRotation: 30 20 0; inspectScale: 0.3 0.3 0.3;
+                                        label_text: Cube; title: Rubiks Cube; description: This is Jimmy's rubiks cube. The number assigned to this object is 12.;"
+                      position="-5 0.3 1.5"
                       rotation="0 30 0"
                       scale="0.15 0.15 0.15"></a-entity>
 

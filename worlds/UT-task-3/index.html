@@ -5,6 +5,9 @@
         <circles-start-scripts/>
 
         <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+        <script src="/worlds/UT-task-3/assets/scripts/teleport-click.js"></script>
+        <script src="/worlds/UT-task-3/assets/scripts/puzzle-manager.js"></script>
+        <script src="/worlds/UT-task-3/assets/scripts/hidden-box.js"></script>
 
     </head>
 
@@ -25,8 +28,8 @@
 
                 <!-- Enviro models -->
                 <a-asset-item id="skybox-model" src="/worlds/UT-task-3/assets/models/forest_clearing_1_ground_skybox.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
-                <a-asset-item id="enviro-model" src="/worlds/UT-task-3/assets/models/simple-room_02.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
-                <a-asset-item id="navmesh_gltf" src="/worlds/UT-task-3/assets/models/simple-room-nav_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="enviro-model" src="/worlds/UT-task-3/assets/models/simple-room_03.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
+                <a-asset-item id="navmesh_gltf" src="/worlds/UT-task-3/assets/models/simple-room-nav_02.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
                 <a-asset-item id="mug-model" src="/worlds/UT-task-3/assets/models/object-mug_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
                 <a-asset-item id="book-model" src="/worlds/UT-task-3/assets/models/object-book_01.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
                 <a-asset-item id="notebook-model" src="/worlds/UT-task-3/assets/models/object-book_03.glb" response-type="arraybuffer" preload="auto" crossorigin="anonymous"></a-asset-item>
@@ -42,7 +45,13 @@
                       gltf-model="#enviro-model"
                       position="0 0 0"
                       rotation="0 0 0"
-                      scale="0.3 0.2 0.3"></a-entity>
+                      scale="0.15 0.2 0.15"></a-entity>
+            
+            <a-entity id="navmesh" circles-interactable-object teleport-click visible="true"
+                      gltf-model="#navmesh_gltf"
+                      position="0 0 0"
+                      rotation="0 0 0"
+                      scale="0.15 0.2 0.15"></a-entity>
 
             <a-entity id="skybox"
                       gltf-model="#skybox-model"
@@ -50,33 +59,44 @@
                       rotation="0 0 0"
                       scale="2 2 2"></a-entity>
 
-            <a-entity id="navmesh" nav-mesh visible="false"
-                      geometry="primitive:box; width: 13; height: 0.2; depth: 7" material="color: grey;"
-                      position="3.4 0.1 0"
-                      rotation="0 0 0"></a-entity>
-
-            <a-entity id="portal-task-1"
-                      circles-portal="title_text:First Task; link_url:/w/UT-task-1;"
+            <a-entity id="portal-task-1" circles-interactive-visible="false"
+                      circles-portal="title_text:Back To Lobby; link_url:/w/UT-lobby;"
                       position="-3 1.25 -3.5"
                       rotation="0 130 0"></a-entity>
-
-            <!-- objects -->
-            <a-entity id="box_01"
+            
+            <a-entity id="puzzleManager" puzzle-manager>
+                <a-entity id="box_01" hidden-box="pairID: 1;" circles-interactive-object circles-interactive-visible="true"
                       geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
                       position="2 0.7 2.8"
                       rotation="0 0 0"></a-entity>
-            <a-entity id="book_01"
-                      gltf-model="#book-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
-                      position="-3.05 0.65 -2.05"
-                      rotation="7 12 -1"
-                      scale="0.3 0.3 0.3"></a-entity>
-            <a-entity id="book_02"
-                      gltf-model="#notebook-model"
-                      circles-artefact="label_on: false; description_on: false; inspectPosition: 0 0 0; inspectRotation: 15 20 0;"
-                      position="-2.75 0.78 -2.1"
-                      rotation="0 80 0"
-                      scale="0.25 0.25 0.25"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: blue;"
+                      position="2 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                
+                <a-entity id="box_02" hidden-box="pairID: 1;" circles-interactive-object circles-interactive-visible="true"
+                      geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
+                      position="4 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: blue;"
+                      position="4 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                
+                <a-entity id="box_03" hidden-box="pairID: 2;" circles-interactive-object circles-interactive-visible="true"
+                      geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
+                      position="0 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: red;"
+                      position="0 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                
+                <a-entity id="box_04" hidden-box="pairID: 2;" circles-interactive-object circles-interactive-visible="true"
+                      geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
+                      position="6 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: red;"
+                      position="6 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+            </a-entity>
 
             <!-- teleport points -->
             <a-entity class="checkPoint"
