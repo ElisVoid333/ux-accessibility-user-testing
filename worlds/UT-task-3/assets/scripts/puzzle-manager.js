@@ -42,10 +42,11 @@ AFRAME.registerComponent('puzzle-manager', {
             console.log('They match!');
             CONTEXT_AF.data.matches++;
 
-            if(CONTEXT_AF.data.matches < 2){
+            if(CONTEXT_AF.data.matches < 3){
                 GameState = NextState;
             }else{
                 GameState = FinishState;
+                document.getElementById('portal').setAttribute('circles-interactive-visible', true);
                 console.log('Finished!');
             }
         }else{

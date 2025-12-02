@@ -24,15 +24,13 @@ AFRAME.registerComponent('teleport-click', {
     if (!this.raycaster) { 
       //console.log('not raycaster'); 
       return; 
-    }else{
-      let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
-      if (!intersection) { 
-        //console.log('intersecting!'); 
-        return; 
-      }
-    }  // Not intersecting.
+    }// Not intersecting.
     
-    
+    let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
+    if (!intersection) { 
+      console.log('intersecting!'); 
+      return; 
+    }
     
     // move the cursor
     let teleportCursor = document.querySelector('#teleport-cursor');

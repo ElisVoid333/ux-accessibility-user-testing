@@ -3,6 +3,7 @@
 AFRAME.registerComponent('hidden-box', {
   schema: {
     pairID:{type:'number',   default:'0'},
+    visible:{type:'bool', default:'true'},
   },
   init: function() {
     const CONTEXT_AF = this;
@@ -27,10 +28,17 @@ AFRAME.registerComponent('hidden-box', {
   },
 
   toggleVisible: function() {
-    if(this.el.getAttribute('circles-interactive-visible') == true){
-        this.el.setAttribute('circles-interactive-visible', false);
+    const CONTEXT_AF = this;
+    if(CONTEXT_AF.data.visible == true){
+        //this.el.setAttribute('circles-interactive-visible', false);
+        CONTEXT_AF.el.emit('hide');
+        CONTEXT_AF.data.visible = false;
+        //this.el.setAttribute('animation', {property: 'circles-interactive-visible', to: 'false', delay: '300'});
     }else{
-        this.el.setAttribute('circles-interactive-visible', true);
+        //this.el.setAttribute('circles-interactive-visible', true);
+        CONTEXT_AF.el.emit('appear');
+        CONTEXT_AF.data.visible = true;
+        //this.el.setAttribute('animation', {property: 'circles-interactive-visible', to: 'true', delay: '300'});
     }
     
   },

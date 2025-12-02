@@ -59,13 +59,15 @@
                       rotation="0 0 0"
                       scale="2 2 2"></a-entity>
 
-            <a-entity id="portal-task-1" circles-interactive-visible="false"
+            <a-entity id="portal" circles-interactive-visible="false"
                       circles-portal="title_text:Back To Lobby; link_url:/w/UT-lobby;"
                       position="-3 1.25 -3.5"
-                      rotation="0 130 0"></a-entity>
+                      rotation="0 0 0"></a-entity>
             
             <a-entity id="puzzleManager" puzzle-manager>
                 <a-entity id="box_01" hidden-box="pairID: 1;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
                       geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
                       position="2 0.7 2.8"
                       rotation="0 0 0"></a-entity>
@@ -74,6 +76,8 @@
                       rotation="0 0 0"></a-entity>
                 
                 <a-entity id="box_02" hidden-box="pairID: 1;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
                       geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
                       position="4 0.7 2.8"
                       rotation="0 0 0"></a-entity>
@@ -82,6 +86,28 @@
                       rotation="0 0 0"></a-entity>
                 
                 <a-entity id="box_03" hidden-box="pairID: 2;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
+                      geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
+                      position="-2 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: orange;"
+                      position="-2 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                
+                <a-entity id="box_04" hidden-box="pairID: 2;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
+                      geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
+                      position="6 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: orange;"
+                      position="6 0.7 2.8"
+                      rotation="0 0 0"></a-entity>
+                
+                <a-entity id="box_05" hidden-box="pairID: 3;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
                       geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
                       position="0 0.7 2.8"
                       rotation="0 0 0"></a-entity>
@@ -89,12 +115,14 @@
                       position="0 0.7 2.8"
                       rotation="0 0 0"></a-entity>
                 
-                <a-entity id="box_04" hidden-box="pairID: 2;" circles-interactive-object circles-interactive-visible="true"
+                <a-entity id="box_06" hidden-box="pairID: 3;" circles-interactive-object circles-interactive-visible="true"
+                      animation__appear="property: circles-interactive-visible; to: true; delay: 500; autoplay: false; startEvents: appear;"
+                      animation__hide="property: circles-interactive-visible; to: false; autoplay: false; startEvents: hide;"
                       geometry="primitive:box; width: 1; height: 1; depth: 1" material="color: grey;"
-                      position="6 0.7 2.8"
+                      position="8 0.7 2.8"
                       rotation="0 0 0"></a-entity>
                 <a-entity geometry="primitive:sphere; radius: 0.5;" material="color: red;"
-                      position="6 0.7 2.8"
+                      position="8 0.7 2.8"
                       rotation="0 0 0"></a-entity>
             </a-entity>
 
