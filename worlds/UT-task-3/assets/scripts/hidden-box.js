@@ -19,7 +19,7 @@ AFRAME.registerComponent('hidden-box', {
         console.log("Box has been reset!");
     });
 
-    console.log("Initialized!");
+    //console.log("Initialized!");
   },
   
   select: function() {

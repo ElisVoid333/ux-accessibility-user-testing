@@ -4,31 +4,31 @@ AFRAME.registerComponent('teleport-click', {
     // hardcode the raycaster.
     this.el.addEventListener('raycaster-intersected', evt => {
         this.raycaster = evt.detail.el;
-        console.log('raycaster is ' + this.raycaster); 
     });
     this.el.addEventListener('raycaster-intersected-cleared', evt => {
       this.raycaster = null;
     });
 
-    // making the teleport pad
+    // mkaing the teleport pad
     //create a teleport pad, then we'll move it to the interseting point
     let sceneEl = document.querySelector('a-scene');
     let newLocation = document.createElement('a-entity');
     newLocation.setAttribute('id', 'teleport-cursor');
     newLocation.setAttribute('circles-checkpoint', {});
+    newLocation.setAttribute('scale', {x:0.5, y:0.5, z:0.5});
     sceneEl.appendChild(newLocation);
   },
 
   tick: function () {
       
     if (!this.raycaster) { 
-      //console.log('not raycaster'); 
+      //console.log('not intersecting'); 
       return; 
-    }// Not intersecting.
+    }  // Not intersecting.
     
     let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
     if (!intersection) { 
-      console.log('intersecting!'); 
+      //console.log('intersecting!'); 
       return; 
     }
     

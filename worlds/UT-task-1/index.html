@@ -3,6 +3,7 @@
 
         <!-- Circles' head scripts [REQUIRED] -->
         <circles-start-scripts/>
+        <script src="/worlds/UT-task-3/assets/scripts/teleport-click.js"></script>
 
         <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
 
@@ -58,7 +59,7 @@
                       rotation="0 0 0"
                       scale="2 2 2"></a-entity>
 
-            <a-entity id="navmesh" 
+            <a-entity id="navmesh" circles-interactive-object teleport-click
                       gltf-model="#navmesh_gltf" visible='false' nav-mesh
                       position="-3.75 0 0"
                       rotation="0 0 0"
@@ -107,7 +108,7 @@
                       rotation="0 30 0"
                       scale="0.15 0.15 0.15"></a-entity>
 
-            <!-- teleport points -->
+            <!-- teleport points
             <a-entity class="checkPoint"
                       circles-checkpoint circles-spawnpoint
                       position="-2 0.2 0.9" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
@@ -118,7 +119,7 @@
                       circles-checkpoint
                       position="1 0.2 -1" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
 
-            <!-- end your code: -->
+            end your code: -->
         </a-scene>
 
         <!-- Circles' end scripts [REQUIRED] -->

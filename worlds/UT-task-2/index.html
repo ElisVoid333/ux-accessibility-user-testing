@@ -3,6 +3,7 @@
 
         <!-- Circles' head scripts [REQUIRED] -->
         <circles-start-scripts/>
+        <script src="/worlds/UT-task-3/assets/scripts/teleport-click.js"></script>
 
         <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
 
@@ -52,7 +53,7 @@
                       rotation="0 0 0"
                       scale="2 2 2"></a-entity>
 
-            <a-entity id="navmesh" 
+            <a-entity id="navmesh" circles-interactive-object teleport-click
                       gltf-model="#navmesh_gltf" visible='false' nav-mesh
                       position="0 -0.1 -11"
                       rotation="0 0 0"

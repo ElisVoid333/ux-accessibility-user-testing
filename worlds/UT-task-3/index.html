@@ -46,12 +46,11 @@
                       position="0 0 0"
                       rotation="0 0 0"
                       scale="0.15 0.2 0.15"></a-entity>
-            
-            <a-entity id="navmesh" circles-interactable-object teleport-click visible="false"
-                      gltf-model="#navmesh_gltf"
-                      position="0 0 0"
-                      rotation="0 0 0"
-                      scale="0.15 0.2 0.15"></a-entity>
+
+            <a-entity id="floor" circles-interactive-object teleport-click visible="false"
+                      geometry="primitive: plane; height: 5; width: 15;"
+                      position="2.5 0.25 -0.5"
+                      rotation="-90 0 0"></a-entity>
 
             <a-entity id="skybox"
                       gltf-model="#skybox-model"
@@ -126,7 +125,7 @@
                       rotation="0 0 0"></a-entity>
             </a-entity>
 
-            <!-- teleport points -->
+            <!-- teleport points
             <a-entity class="checkPoint"
                       circles-checkpoint circles-spawnpoint
                       position="3 0.22 -2" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
@@ -137,7 +136,7 @@
                       circles-checkpoint
                       position="7 0.22 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
 
-            <!-- end your code: -->
+            end your code: -->
         </a-scene>
 
         <!-- Circles' end scripts [REQUIRED] -->
